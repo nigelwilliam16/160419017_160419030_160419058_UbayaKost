@@ -57,7 +57,9 @@
         tools:layout="@layout/fragment__profile">
         <action
             android:id="@+id/action_itemProfile_to_fragmentEditProfile"
-            app:destination="@id/fragmentEditProfile" />
+            app:destination="@id/fragmentEditProfile"
+            app:popUpTo="@id/fragmentEditProfile"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/itemMyKost"
@@ -71,7 +73,9 @@
         tools:layout="@layout/fragment_edit_profile">
         <action
             android:id="@+id/action_fragmentEditProfile_to_itemProfile"
-            app:destination="@id/itemProfile" />
+            app:destination="@id/itemProfile"
+            app:popUpTo="@id/itemProfile"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/itemAbout"

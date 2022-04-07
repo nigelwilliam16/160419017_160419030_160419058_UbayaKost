@@ -26,6 +26,7 @@ class FragmentLogin : Fragment() {
         buttonLogin.setOnClickListener{
             Navigation.findNavController(it).navigate(FragmentLoginDirections.actionListKost())
         }
+
     }
 
 
