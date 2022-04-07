@@ -26,7 +26,7 @@ class ListViewModel(application: Application) : AndroidViewModel(application) {
         kostLoadErrorLiveData.value = false
         loadingLiveData.value = true
         queue = Volley.newRequestQueue(getApplication())
-        val url = "http://10.0.2.2/kost.php"
+        val url = "https://api.npoint.io/e6260fcf7e8aecbe6381"
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             {

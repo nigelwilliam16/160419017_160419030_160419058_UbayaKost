@@ -32,8 +32,9 @@
             android:id="@+id/actionCheckout"
             app:destination="@id/fragmentCheckout" />
         <argument
-            android:name="namaKost"
-            app:argType="string" />
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCheckout"

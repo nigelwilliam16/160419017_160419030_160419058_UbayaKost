@@ -17,17 +17,20 @@ class DetailViewModel(application: Application): AndroidViewModel(application) {
         val Tag = "volleyTag"
         private var queue: RequestQueue? = null
 
-        fun fetch(namaKost: String) {
+        fun fetch(id: String) {
 
             queue = Volley.newRequestQueue(getApplication())
-            val url = "http://10.0.2.2/kost.php?id=$namaKost"
+            val url = "https://api.npoint.io/e6260fcf7e8aecbe6381/$id"
 
             val stringRequest = StringRequest(
                 Request.Method.GET, url,
                 {
-                    val sType = object : TypeToken<List<Kost>>() {}.type
-                    val result = Gson().fromJson<Kost>(it, sType)
-                    kostLiveData.value = result
+                    val sType = object : TypeToken<ArrayList<Kost>>() {}.type
+                    val result = Gson().fromJson<ArrayList<Kost>>(it, Kost::class.java)
+                    for (i in result) {
+                        if (i.id == id)
+                            kostLiveData.value = i
+                    }
 
                     Log.d("Show volley: ", result.toString())
                 },
