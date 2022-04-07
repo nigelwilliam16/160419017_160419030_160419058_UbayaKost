@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import id.ac.ubaya.informatika.ubayakost_160419017.R
 import id.ac.ubaya.informatika.ubayakost_160419017.Util.loadImage
 import id.ac.ubaya.informatika.ubayakost_160419017.viewModel.DetailViewModel
@@ -31,8 +33,12 @@ class FragmentDetailKost : Fragment() {
             viewModel.fetch(id)
         }
 
-
         observeViewModel()
+
+        buttonBooking.setOnClickListener {
+            val action = FragmentDetailKostDirections.actionCheckout(textViewID.text.toString())
+            Navigation.findNavController(it).navigate(action)
+        }
     }
     private fun observeViewModel() {
         viewModel.kostLiveData.observe(viewLifecycleOwner){
@@ -41,6 +47,8 @@ class FragmentDetailKost : Fragment() {
                 imageViewDetailKost.loadImage(
                     kost.foto, progressBarDetail
                 )
+                textViewID.setText(it.id)
+                textViewID.isVisible = false
                 textViewDetailNamaKost.setText(it.namaKost)
                 textViewDeskripsiKost.setText(it.deskripsi)
                 textViewHargaDetail.setText("Rp. " + it.harga)
