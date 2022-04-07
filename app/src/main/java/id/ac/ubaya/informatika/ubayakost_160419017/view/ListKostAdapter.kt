@@ -28,11 +28,11 @@ class ListKostAdapter(val listKost: ArrayList<Kost>) : RecyclerView.Adapter<List
             textViewGender.text = kost.tipeKost
             buttonLocation.text = kost.alamat
             buttonDetail.setOnClickListener {
-                val action = FragmentListKostDirections.actionDetailKost(kost.namaKost.toString())
+                val action = FragmentListKostDirections.actionDetailKost(listKost[position].id.toString())
 
                 Navigation.findNavController(it).navigate(action)
             }
-            imageViewKost.loadImage(kost.foto, holder.view.progressBarDetail)
+            imageViewKost.loadImage(kost.foto)
         }
     }
 

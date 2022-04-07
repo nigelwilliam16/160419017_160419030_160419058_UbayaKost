@@ -25,13 +25,8 @@ class DetailViewModel(application: Application): AndroidViewModel(application) {
             val stringRequest = StringRequest(
                 Request.Method.GET, url,
                 {
-                    val sType = object : TypeToken<ArrayList<Kost>>() {}.type
-                    val result = Gson().fromJson<ArrayList<Kost>>(it, Kost::class.java)
-                    for (i in result) {
-                        if (i.id == id)
-                            kostLiveData.value = i
-                    }
-
+                    val result = Gson().fromJson<Kost>(it, Kost::class.java)
+                    kostLiveData.value = result
                     Log.d("Show volley: ", result.toString())
                 },
                 {
