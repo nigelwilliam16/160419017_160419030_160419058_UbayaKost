@@ -38,7 +38,7 @@ class FragmentProfile : Fragment() {
 
         imageViewProfile.loadImage("https://thumb.suara.com/REOX2RJtISUhU58TydB9iw1PEbg=/653x366/https://media.suara.com/pictures/653x366/2022/02/15/99844-ilustrasi-pria-sedang-bekerja-pexelscomandrea-piacquadio.jpg", progressBarProfile)
         buttonEditProfile.setOnClickListener {
-            Navigation.findNavController(it).navigate(FragmentProfileDirections.actionItemProfileToFragmentEditProfile(textViewNama.toString(),textViewEmail.toString(),textViewPhoneNumber.toString()))
+            Navigation.findNavController(it).navigate(FragmentProfileDirections.actionItemProfileToFragmentEditProfile(textViewNama.text.toString(),textViewPhoneNumber.text.toString(),textViewEmail.text.toString()))
         }
     }
 }
