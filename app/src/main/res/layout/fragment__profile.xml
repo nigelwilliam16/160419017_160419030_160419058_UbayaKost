@@ -7,14 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".view.FragmentProfile" >
 
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="andersenwills@gmail.com"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNama3" />
+
     <ProgressBar
         android:id="@+id/progressBarProfile"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNama" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewUsername" />
 
     <ImageView
         android:id="@+id/imageViewProfile"
@@ -28,10 +47,10 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textViewNama"
+        android:id="@+id/textView99"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="104dp"
         android:text="Nama"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +67,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNama" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewNama" />
 
     <TextView
         android:id="@+id/textViewNama3"
@@ -59,7 +78,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPhoneNumber" />
 
     <Button
         android:id="@+id/buttonEditProfile"
@@ -85,49 +104,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
 
-    <EditText
-        android:id="@+id/editTextNama"
-        android:layout_width="364dp"
-        android:layout_height="49dp"
+    <TextView
+        android:id="@+id/textViewNama"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="William Anderson"
+        android:layout_marginEnd="16dp"
+        android:text="William Andersen"
         android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNama" />
+        app:layout_constraintTop_toBottomOf="@+id/textView99" />
 
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="364dp"
-        android:layout_height="49dp"
+    <TextView
+        android:id="@+id/textViewPhoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="082163451224"
+        android:layout_marginEnd="16dp"
+        android:text="08212245698"
         android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNama2" />
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="364dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="16dp"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="andersenwills@gmail.com"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNama3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
