@@ -60,6 +60,15 @@
             app:destination="@id/fragmentEditProfile"
             app:popUpTo="@id/fragmentEditProfile"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="nama"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/itemMyKost"
@@ -76,6 +85,15 @@
             app:destination="@id/itemProfile"
             app:popUpTo="@id/itemProfile"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="nama"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/itemAbout"

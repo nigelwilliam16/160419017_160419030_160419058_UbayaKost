@@ -24,9 +24,21 @@ class FragmentProfile : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if(arguments != null) {
+            val nama = FragmentProfileArgs.fromBundle(requireArguments()).nama
+            val phone = FragmentProfileArgs.fromBundle(requireArguments()).phone
+            val email = FragmentProfileArgs.fromBundle(requireArguments()).email
+
+            editTextNama.setText(nama)
+            editTextPhone.setText(phone)
+            editTextEmail.setText(email)
+
+        }
+
         imageViewMyKost.loadImage("https://thumb.suara.com/REOX2RJtISUhU58TydB9iw1PEbg=/653x366/https://media.suara.com/pictures/653x366/2022/02/15/99844-ilustrasi-pria-sedang-bekerja-pexelscomandrea-piacquadio.jpg", progressBarProfile)
         buttonEditProfile.setOnClickListener {
-            Navigation.findNavController(it).navigate(FragmentProfileDirections.actionItemProfileToFragmentEditProfile())
+            Navigation.findNavController(it).navigate(FragmentProfileDirections.actionItemProfileToFragmentEditProfile(editTextNama.toString(),editTextPhone.toString(),editTextEmail.toString()))
         }
     }
 }
