@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FragmentMyKost">
+
+    <Button
+        android:id="@+id/buttonMessageMyKost"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="Message"
+        android:textColor="#AEAEAE"
+        app:icon="@drawable/ic_baseline_message_24"
+        app:iconTint="#AEAEAE"
+        app:layout_constraintBottom_toTopOf="@+id/buttonExtend"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonPhoneMyKost"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="84dp"
+        android:text="Phone"
+        android:textColor="#AEAEAE"
+        app:icon="@drawable/ic_baseline_local_phone_24"
+        app:iconTint="#AEAEAE"
+        app:layout_constraintBottom_toTopOf="@+id/buttonExtend"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLocationDetail2"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        app:icon="@drawable/ic_baseline_location_on_24"
+        app:iconTint="#AEAEAE"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewKost"
+        app:layout_constraintStart_toEndOf="@+id/imageViewDetailKost2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textViewDetailNamaKost2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nama Kost"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/buttonLocationDetail2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLocationDetail2" />
+
+    <TextView
+        android:id="@+id/textViewDeskripsiKost2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Deskripsi"
+        app:layout_constraintStart_toStartOf="@+id/textViewDetailNamaKost2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailNamaKost2" />
+
+    <ImageView
+        android:id="@+id/imageViewDetailKost2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/buttonExtend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:text="Extend"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewHarga2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Harga"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDetailKost2"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDetailKost2"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDetailKost2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
