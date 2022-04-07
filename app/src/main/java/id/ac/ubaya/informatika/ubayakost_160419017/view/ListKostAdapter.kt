@@ -32,7 +32,7 @@ class ListKostAdapter(val listKost: ArrayList<Kost>) : RecyclerView.Adapter<List
 
                 Navigation.findNavController(it).navigate(action)
             }
-            imageViewKost.loadImage(kost.foto)
+            imageViewKost.loadImage(kost.foto, progressBarCard)
         }
     }
 

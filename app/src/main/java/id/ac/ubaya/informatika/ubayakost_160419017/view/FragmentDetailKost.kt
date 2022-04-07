@@ -39,7 +39,7 @@ class FragmentDetailKost : Fragment() {
             val kost = it
             kost?.let {
                 imageViewDetailKost.loadImage(
-                    kost.foto
+                    kost.foto, progressBarDetail
                 )
                 textViewDetailNamaKost.setText(it.namaKost)
                 textViewDeskripsiKost.setText(it.deskripsi)
