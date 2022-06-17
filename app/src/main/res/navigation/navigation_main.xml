@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/fragmentLogin">
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentLogin"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/actionListKost"
+            app:destination="@id/itemHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemHome"
+        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentListKost"
+        android:label="Daftar Kos"
+        tools:layout="@layout/fragment_list_kost">
+        <action
+            android:id="@+id/actionDetailKost"
+            app:destination="@id/fragmentDetailKost" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetailKost"
+        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentDetailKost"
+        android:label="Detail Kost"
+        tools:layout="@layout/fragment_detail_kost">
+        <action
+            android:id="@+id/actionCheckout"
+            app:destination="@id/fragmentCheckout" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCheckout"
+        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentCheckout"
+        android:label="Checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentCheckout_to_itemHome"
+            app:destination="@id/itemHome"
+            app:popUpTo="@id/itemHome"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentProfile"
+        android:label="Profile"
+        tools:layout="@layout/fragment__profile">
+        <action
+            android:id="@+id/action_itemProfile_to_fragmentEditProfile"
+            app:destination="@id/fragmentEditProfile"
+            app:popUpTo="@id/fragmentEditProfile"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="nama"
+            app:argType="string"
+            android:defaultValue="William Anderson" />
+        <argument
+            android:name="phone"
+            app:argType="string"
+            android:defaultValue="082163451224" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="andersenwills@gmail.com" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemMyKost"
+        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentMyKost"
+        android:label="My Kost"
+        tools:layout="@layout/fragment_my_kost" />
+    <fragment
+        android:id="@+id/fragmentEditProfile"
+        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentEditProfile"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile">
+        <action
+            android:id="@+id/action_fragmentEditProfile_to_itemProfile"
+            app:destination="@id/itemProfile"
+            app:popUpTo="@id/itemProfile"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="nama"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemAbout"
+        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentAbout"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+</navigation>
