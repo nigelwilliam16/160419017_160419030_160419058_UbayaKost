@@ -1,4 +1,4 @@
-package id.ac.ubaya.informatika.ubayakost_160419017.model
+package id.ac.ubaya.informatika.ubayakost_uas_17_30_58.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
