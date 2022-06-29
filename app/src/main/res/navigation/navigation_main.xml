@@ -13,6 +13,9 @@
         <action
             android:id="@+id/actionListKost"
             app:destination="@id/itemHome" />
+        <action
+            android:id="@+id/actionRegister"
+            app:destination="@id/itemRegister" />
     </fragment>
     <fragment
         android:id="@+id/itemHome"
@@ -99,8 +102,12 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/itemAbout"
+        android:id="@+id/itemRegister"
         android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentRegister"
-        android:label="About"
-        tools:layout="@layout/fragment_register" />
+        android:label="Register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/actionFragmentRegisToLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
 </navigation>
