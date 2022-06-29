@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import id.ac.ubaya.informatika.ubayakost_uas_17_30_58.R
 
 
-class FragmentAbout : Fragment() {
+class FragmentRegister : Fragment() {
 
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class FragmentAbout : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false)
+        return inflater.inflate(R.layout.fragment_register, container, false)
     }
 
 

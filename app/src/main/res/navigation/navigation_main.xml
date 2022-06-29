@@ -100,7 +100,7 @@
     </fragment>
     <fragment
         android:id="@+id/itemAbout"
-        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentAbout"
+        android:name="id.ac.ubaya.informatika.ubayakost_uas_17_30_58.view.FragmentRegister"
         android:label="About"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_register" />
 </navigation>
