@@ -12,7 +12,7 @@ import id.ac.ubaya.informatika.ubayakost_uas_17_30_58.viewModel.ListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_list_kost.*
 
-class FragmentListKost : Fragment() {
+class  FragmentListKost : Fragment() {
     private lateinit var viewModel: ListViewModel
     private val listKostAdapter  = ListKostAdapter(arrayListOf())
 
@@ -25,8 +25,10 @@ class FragmentListKost : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
-        viewModel.refresh()
+        viewModel.display()
 
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = listKostAdapter
@@ -37,7 +39,7 @@ class FragmentListKost : Fragment() {
             recyclerView.visibility = View.GONE
             textViewError.visibility = View.GONE
             progressBar.visibility = View.VISIBLE
-            viewModel.refresh()
+            viewModel.display()
             refreshLayout.isRefreshing = false
         }
 

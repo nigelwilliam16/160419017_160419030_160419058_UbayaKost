@@ -7,10 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import id.ac.ubaya.informatika.ubayakost_uas_17_30_58.R
+import id.ac.ubaya.informatika.ubayakost_uas_17_30_58.viewModel.AccountViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class FragmentLogin : Fragment() {
-
+    private lateinit var viewModel: AccountViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +25,8 @@ class FragmentLogin : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttonLogin.setOnClickListener{
+            viewModel.login(editTextUsernameLogin.toString(), editTextPasswordLogin.toString())
+
             Navigation.findNavController(it).navigate(FragmentLoginDirections.actionListKost())
         }
 

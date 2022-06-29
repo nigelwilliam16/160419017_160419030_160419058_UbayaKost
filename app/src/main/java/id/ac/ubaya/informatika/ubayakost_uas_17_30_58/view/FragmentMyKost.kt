@@ -50,7 +50,7 @@ class FragmentMyKost : Fragment() {
                 textViewMyKostHarga.setText("Rp. " + it.harga)
                 buttonLocationMyKost.setText(it.alamat)
                 buttonPhoneMyKost.setText(it.telepon)
-                buttonMessageMyKost.setText(it.message)
+                buttonMessageMyKost.setText(it.telepon)
             }
         }
     }

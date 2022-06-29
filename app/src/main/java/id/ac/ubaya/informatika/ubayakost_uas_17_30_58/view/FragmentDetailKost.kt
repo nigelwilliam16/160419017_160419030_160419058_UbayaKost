@@ -47,14 +47,14 @@ class FragmentDetailKost : Fragment() {
                 imageViewDetailKost.loadImage(
                     kost.foto, progressBarDetail
                 )
-                textViewID.setText(it.id)
+                textViewID.setText(it.idKost)
                 textViewID.isVisible = false
                 textViewDetailNamaKost.setText(it.namaKost)
                 textViewDeskripsiKost.setText(it.deskripsi)
                 textViewHargaDetail.setText("Rp. " + it.harga)
                 buttonLocationDetail.setText(it.alamat)
                 buttonPhoneDetail.setText(it.telepon)
-                buttonMessageDetail.setText(it.message)
+                buttonMessageDetail.setText(it.telepon)
             }
         }
     }

@@ -28,7 +28,7 @@ class ListKostAdapter(val listKost: ArrayList<Kost>) : RecyclerView.Adapter<List
             textViewGender.text = kost.tipeKost
             buttonLocation.text = kost.alamat
             buttonDetail.setOnClickListener {
-                val action = FragmentListKostDirections.actionDetailKost(listKost[position].id.toString())
+                val action = FragmentListKostDirections.actionDetailKost(listKost[position].idKost.toString())
 
                 Navigation.findNavController(it).navigate(action)
             }
@@ -38,7 +38,7 @@ class ListKostAdapter(val listKost: ArrayList<Kost>) : RecyclerView.Adapter<List
 
     override fun getItemCount() =  listKost.size
 
-    fun updateKostList(newKostList: ArrayList<Kost>) {
+    fun updateKostList(newKostList: List<Kost>) {
         listKost.clear()
         listKost.addAll(newKostList)
         notifyDataSetChanged()
