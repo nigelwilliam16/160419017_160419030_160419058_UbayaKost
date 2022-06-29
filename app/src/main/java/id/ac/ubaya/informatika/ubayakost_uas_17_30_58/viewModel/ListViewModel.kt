@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.room.Room
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
@@ -13,45 +14,35 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import id.ac.ubaya.informatika.ubayakost_uas_17_30_58.model.Kost
+import id.ac.ubaya.informatika.ubayakost_uas_17_30_58.model.KostDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import java.net.URL
+import kotlin.coroutines.CoroutineContext
 
-class ListViewModel(application: Application) : AndroidViewModel(application) {
-    val kostLiveData = MutableLiveData<ArrayList<Kost>>()
+class ListViewModel(application: Application) : AndroidViewModel(application), CoroutineScope {
+
+    val kostLiveData = MutableLiveData<List <Kost>>()
     val kostLoadErrorLiveData = MutableLiveData<Boolean>()
     val loadingLiveData = MutableLiveData<Boolean>()
-    val Tag = "volleyTag"
-    private var queue:RequestQueue? = null
 
-    fun refresh() {
+    private var job = Job()
+
+    override val coroutineContext: CoroutineContext
+        get() = job + Dispatchers.Main
+
+    fun display() {
         kostLoadErrorLiveData.value = false
         loadingLiveData.value = true
-        queue = Volley.newRequestQueue(getApplication())
-        val url = "https://api.npoint.io/e6260fcf7e8aecbe6381"
-        val stringRequest = StringRequest(
-            Request.Method.GET, url,
-            {
-                val sType = object : TypeToken<ArrayList<Kost>>() { }.type
-                val result = Gson().fromJson<ArrayList<Kost>>(it, sType)
-                kostLiveData.value = result
-                loadingLiveData.value = false
 
-                loadingLiveData.value = false
-                Log.d("showvolley", it)
-            },
-            {
-                loadingLiveData.value = false
-                kostLoadErrorLiveData.value = true
-                Log.d("errorvolley", it.toString())
-            }
-        ).apply {
-            tag = "TAG"
+        launch {
+            val db = Room.databaseBuilder(
+                getApplication(),
+                KostDatabase::class.java, "kost").build()
+
+            kostLiveData.value = db.kostDao().displayKost()
         }
-        queue?.add(stringRequest)
     }
-
-    override fun onCleared() {
-        super.onCleared()
-        queue?.cancelAll(Tag)
-    }
-
 }
